@@ -1,0 +1,49 @@
+Commit Title (50 char max)
+
+Release Notes
+=============
+
+Testing Notes
+=============
+
+Deploy Notes
+============
+
+Technical Change Notes
+======================
+
+# ------------------------ >8 ------------------------
+# Do not modify or remove the line above.
+# Everything below it will be ignored.
+#
+# Our commit messages should be structured as follows. Each section
+# _after_ the commit title is introduced with a "heading 1" indicated by
+# underlining with `=` characters. We can't use a leading `#` because
+# `git` considers that a comment line.
+#
+# Except for the commit title, the maximum width of a commit line is 72
+# characters.
+#
+# - The commit title can be up to 50 characters wide and must not end
+#   with a period. The commit title must be followed by a blank line.
+#
+# - **Release notes** for the commit. This will be shared with the
+#   client as part of the release notes for the release. This may be
+#   empty if the change is wholly for internal reasons. The **release
+#   notes** will _also_ be included in the deploy ticket.
+#
+# - **Testing notes** for the commit. This will be shared with QA and
+#   the client for verification of the feature. This may be empty.
+#
+# - **Deploy notes**, if any. These will be included in the deploy
+#   ticket. This will include any deploy verification tests.
+#
+# - **Technical change notes** for the commit. This will _NOT_ typically
+#   be added to the release notes. This should not be empty, but if the
+#   **release notes** cover the whole of the change, then the
+#   **technical change notes** _may_ be empty.
+#
+#   The **technical change notes** should describe _why_ this change is
+#   needed. It _may_ include some _how_ of the change, but don’t get too
+#   technical or detailed as the code, documentation, and comments
+#   should cover that.

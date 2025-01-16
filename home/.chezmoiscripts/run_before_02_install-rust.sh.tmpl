@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env") . -}}
+
+if ! binary_exists rustup; then
+  info "install rustup" -icon "🍺"
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+  # shellcheck disable=SC1091
+  source "${HOME}"/.cargo/env
+fi
+
+if ! binary_exists cargo-binstall; then
+  info "install cargo-binstall" -icon "🍺"
+  cargo install --force cargo-binstall
+fi

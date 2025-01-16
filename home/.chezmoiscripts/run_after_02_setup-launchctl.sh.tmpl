@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env") . -}}
+
+if launchctl_loaded "dev.haim.display-switch.daemon"; then
+  launchctl unload "${HOME}"/Library/LaunchAgents/dev.haim.display-switch.daemon.plist
+fi
+
+launchctl load "${HOME}"/Library/LaunchAgents/dev.haim.display-switch.daemon.plist

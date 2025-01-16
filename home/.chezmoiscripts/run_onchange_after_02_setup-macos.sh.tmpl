@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env") . -}}
+
+osascript -e 'tell application "System Preferences" to quit'
+
+requires_sudo
+{{ includeTemplate (joinPath .chezmoi.workingTree "setup/macos.sh.tmpl") . -}}
+
+ # Kill affected applications
+for app in Finder Dock SystemUIServer; do
+  killall "${app}" >/dev/null 2>&1 || true
+done
+
+

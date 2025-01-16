@@ -1,0 +1,51 @@
+# Professional photo editing application
+mas 'Affinity Photo', id: 824183456
+
+# Vector graphics software
+mas 'Affinity Designer', id: 824171161
+
+# Page layout & design powerhouse
+mas 'Affinity Publisher', id: 881418622
+
+# Keynote lets you make dazzling presentations on a Mac
+mas 'Keynote', id: 409183694
+
+# Pages is a word processor developed by Apple Inc
+mas 'Pages', id: 409201541
+
+# Numbers is a spreadsheet application developed by Apple Inc
+mas 'Numbers', id: 409203825
+
+# Manage storage, apps, and monitor the health of your computer
+cask 'cleanmymac'
+
+# MS open-source developer platform
+tap 'isen-ng/dotnet-sdk-versions'
+cask 'dotnet-sdk6-0-400'
+
+# Command-line shell and scripting language
+cask 'powershell'
+
+# Messaging app with a focus on speed and security
+cask 'telegram'
+
+# Private messaging and calling
+cask 'whatsapp'
+
+# Lossless audio decoder
+cask 'xld'
+
+# Safe and easy interface for managing your cryptocurrencies
+cask 'ledger-live'
+
+# Blockchain platform
+brew 'solana'
+
+# For an instant, secure URL to your localhost server through any NAT or firewall
+cask 'ngrok'
+
+# Mac App Store command line interface
+mas 'Signal Shifter', id: 6446061552
+
+# The most awesome keep-awake app
+mas 'Amphetamine', id: 937984704

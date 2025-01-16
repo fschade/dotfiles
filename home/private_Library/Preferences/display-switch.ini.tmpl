@@ -1,0 +1,9 @@
+usb_device = "2109:0824"
+
+{{- if eq .hostType "personal_mac" }}
+on_usb_connect = "DisplayPort1"
+{{ end -}}
+
+{{- if eq .hostType "work_mac" }}
+on_usb_connect = "DisplayPort2"
+{{ end -}}

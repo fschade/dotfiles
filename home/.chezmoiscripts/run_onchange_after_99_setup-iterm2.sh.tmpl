@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env") . -}}
+
+if ! app_exists "iTerm.app"; then
+  error "iterm2 is not installed." -icon "🧾"
+  exit 0
+else
+  info "closing iterm2, to prevent it from overriding changes." -icon "🧾"
+  osascript -e 'tell application "iTerm" to quit'
+  killall "cfprefsd"
+fi
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "setup/iterm2.sh.tmpl") . -}}
+

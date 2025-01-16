@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env") . -}}
+
+if ! app_exists "Code.app"; then
+  error "vs code is not installed." -icon "🆚"
+  exit 0
+fi
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "setup/vscode.sh.tmpl") . -}}

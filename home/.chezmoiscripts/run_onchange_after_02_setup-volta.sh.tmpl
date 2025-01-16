@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env") . -}}
+
+if ! binary_exists volta; then
+  error "volta is not installed" -icon "🆚"
+  exit 0
+fi
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "setup/volta.sh.tmpl") . -}}

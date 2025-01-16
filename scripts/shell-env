@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env-logger") . -}}
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env-check") . -}}
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env-requires") . -}}

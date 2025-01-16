@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env") . -}}
+
+if ! binary_exists brew; then
+  case "$(uname -m)" in
+  arm64) HOMEBREW_PREFIX="/opt/homebrew" ;;
+  *) HOMEBREW_PREFIX="/usr/local" ;;
+  esac
+
+  if ! [[ -x "${HOMEBREW_PREFIX}/bin/brew" ]]; then
+    error "homebrew is not installed" -icon "🍺"
+    exit 1
+  fi
+
+  eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)" || true
+fi
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+  {{ includeTemplate (joinPath .chezmoi.workingTree "state/brew/brewfile") . -}}
+
+  {{- if eq .hostType "personal_mac" -}}
+    {{ includeTemplate (joinPath .chezmoi.workingTree "state/brew/brewfile.personal_mac") . -}}
+  {{- end -}}
+
+  {{- if eq .hostType "work_mac" -}}
+    {{ includeTemplate (joinPath .chezmoi.workingTree "state/brew/brewfile.work_mac") . -}}
+  {{- end -}}
+EOF
+
+
+

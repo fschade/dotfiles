@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+function binary_exists() {
+  if [[ $# -lt 1 ]]; then
+    error "Missing required argument for function::binary_exists()."
+  fi
+
+  if ! command -v "$1" > /dev/null 2>&1; then
+
+    if [[ -n ${2-} ]]; then
+      error "Missing dependency: Could not locate $1." -category "function::binary_exists"
+    else
+      return 1
+    fi
+
+  fi
+
+  return 0
+}
+
+function file_exists() {
+  if [[ $# -lt 1 ]]; then
+    error "Missing required argument for function::file_exists()."
+  fi
+
+  if ! [[ -s "$1" ]]; then
+
+    if [[ -n ${2-} ]]; then
+      error "Missing dependency: Could not locate $1." -category "function::file_exists"
+    else
+      return 1
+    fi
+
+  fi
+
+  return 0
+}
+
+function folder_exists() {
+  if [[ $# -lt 1 ]]; then
+    error "Missing required argument for function::folder_exists()."
+  fi
+
+  if [[ ! -d "$1" ]]; then
+    return 1
+  fi
+
+  return 0
+}
+
+function app_exists() {
+  if [[ $# -lt 1 ]]; then
+    error "Missing required argument for function::app_exists()."
+  fi
+
+  if ! echo $(mdfind "kMDItemKind == 'Application'") | grep -q "$1"; then
+    return 1
+  fi
+
+  return 0
+}
+
+function launchctl_loaded() {
+  if [[ $# -lt 1 ]]; then
+    error "Missing required argument for function::launchctl_loaded()."
+  fi
+
+  if ! echo $(launchctl list) | grep -q "$1"; then
+    return 1
+  fi
+
+  return 0
+}
+

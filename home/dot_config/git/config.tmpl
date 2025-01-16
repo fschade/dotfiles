@@ -1,0 +1,13 @@
+[user]
+  name = {{ .name | quote }}
+  email = {{ .email | quote }}
+[core]
+  excludesfile = ~/.config/git/ignore
+  editor = nano
+  ignorecase = false
+[commit]
+  template = ~/.config/git/commit-message
+[init]
+  defaultBranch = main
+[push]
+  autoSetupRemote = true

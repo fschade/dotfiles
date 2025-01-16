@@ -1,0 +1,449 @@
+cask_args appdir: '/Applications'
+
+# Integrates Homebrew formulae with macOS 'launchctl' manager
+tap 'homebrew/services'
+
+# A CLI tool upgrading every outdated app installed by Homebrew Cask
+# INFO: brew cu
+tap 'buo/cask-upgrade'
+
+tap 'homebrew/autoupdate'
+tap 'homebrew/bundle'
+tap 'homebrew/services'
+tap 'reviewdog/tap'
+
+##################################################################
+### font
+##################################################################
+
+cask 'font-fira-code'
+cask 'font-fira-mono'
+cask 'font-jetbrains-mono'
+cask 'font-fira-mono-for-powerline'
+
+##################################################################
+### utils
+##################################################################
+
+# Mac App Store command line interface
+brew 'mas'
+
+# VIA is the last application you'll need for your keyboard
+cask 'via'
+
+# Converting video from nearly any format to a selection of modern, widely supported codecs
+cask 'handbrake'
+
+# Swiss Army Knife for macOS
+brew 'm-cli'
+
+# Drive health diagnostic & monitoring tool
+cask 'drivedx'
+
+# Tiny menu bar calendar.
+cask 'itsycal'
+
+# Watch for changes in in plist files and spit out PlistBuddy commands
+tap '8ta4/plist'
+brew 'plist'
+
+# small, fast, low memory, zero-dependency, multi-platform email testing tool
+brew 'mailpit'
+
+# Configuration and firmware update utility for OBSBOT Tiny and Meet series
+cask 'obsbot-center'
+
+# RØDE companion app for the RØDECaster Pro
+cask 'rode-central'
+
+# Virtual Device Driver for RODECASTER Pro II
+cask 'rode-virtual-channels'
+
+# Application uninstaller
+cask 'appcleaner'
+
+# Dell Display and Peripheral Manager
+cask 'ddpm'
+
+# Turn a $30 USB switch into a full-featured KVM switch
+tap 'haimgel/tools'
+brew 'haimgel/tools/display_switch'
+
+##################################################################
+### dev
+##################################################################
+
+# Cross-platform make
+brew 'cmake'
+
+# App for managing hosts file
+cask 'switchhosts'
+
+# Manage your JetBrains tools easily
+cask 'jetbrains-toolbox'
+
+# Command-line JSON processor
+brew 'jq'
+
+# A portable command-line YAML, JSON and XML processor
+brew 'yq'
+
+# Linter for YAML files
+brew 'yamllint'
+
+# JavaScript toolchain manager for reproducible environments
+brew 'volta'
+
+# Secure runtime for JavaScript and TypeScript
+brew 'deno'
+
+# Open source programming language to build simple/reliable/efficient software
+brew 'go'
+
+# Go cross compile tool
+brew 'gox'
+
+# Static analysis and lint tool, for (ba)sh scripts
+brew 'shellcheck'
+
+# Auto format shell script source code
+brew 'shfmt'
+
+# Vulnerability scanner for container images, file systems, and Git repos
+brew 'trivy'
+
+# Libre server and cloud storage browser
+cask 'cyberduck'
+
+# Database management application for working with MySQL & MariaDB databases
+cask 'sequel-ace'
+
+# Make load testing easy for developers and QA engineers
+brew 'k6'
+
+# Creates mock implementations of Golang interfaces
+brew 'mockery'
+
+# Docker Community Edition for Mac
+cask 'docker'
+
+# A tool for exploring each layer in a docker image
+brew 'dive'
+
+# The lazier way to manage everything docker
+brew 'lazydocker'
+
+# Kubernetes command-line interface
+brew 'kubernetes-cli'
+
+# Kubernetes CLI to manage clusters in style
+brew 'k9s'
+
+# The Kubernetes package manager
+tap 'helm/tap'
+brew 'helm'
+
+# A declarative spec for deploying Helm charts
+brew 'helmfile'
+
+# Hosting Helm Charts via GitHub Pages and Releases
+brew 'chart-releaser'
+
+# CLI tool for linting and testing Helm charts
+brew 'chart-testing'
+
+# Customization of kubernetes YAML configurations
+brew 'kustomize'
+
+# Tool for repeatable Kubernetes development
+brew 'skaffold'
+
+# Plugin manager for kubectl command-line tool
+brew 'krew'
+
+# Tool that can switch between kubectl contexts easily and create aliases
+brew 'kubectx'
+
+# Kubernetes log viewer
+tap 'boz/repo'
+brew 'kail'
+
+# Multi pod and container log tailing for Kubernetes
+brew 'stern'
+
+# Bulk port forwarding Kubernetes services for local development
+tap 'txn2/tap'
+brew 'kubefwd'
+
+# Production Grade K8s Installation, Upgrades, and Management
+brew 'kops'
+
+# A single-node Kubernetes cluster inside a VM on your laptop
+brew 'minikube'
+
+# Apple Developer Tools
+mas 'Xcode', id: 497799835
+
+# Microsoft Open-source code editor
+cask 'visual-studio-code'
+
+# Editor
+brew 'nano'
+
+# List USB devices, just like the Linux lsusb command
+brew 'lsusb'
+
+##################################################################
+### dev-network
+##################################################################
+
+# The world’s foremost and widely-used network protocol analyzer
+cask 'wireshark'
+
+# Port scanning utility for large networks
+brew 'nmap'
+
+# Terminal Emulator for macOS
+cask 'iterm2'
+
+# Terminal multiplexer with VT100/ANSI terminal emulation
+brew 'screen'
+
+# A terminal multiplexer, allowing to access multiple separate terminal sessions
+brew 'tmux'
+
+# UNIX shell (command interpreter)
+brew 'zsh'
+
+# A next-generation plugin manager for zsh
+brew 'zplug'
+
+# The minimal, blazing-fast, and infinitely customizable prompt for any shell
+brew 'starship'
+
+# GNU File, Shell, and Text utilities
+brew 'coreutils'
+
+# Internet file retriever
+brew 'wget'
+
+# Modern replacement for 'ls'
+brew 'eza'
+
+# Display directories as trees
+brew 'tree'
+
+# A new way to see and navigate directory trees
+brew 'broot'
+
+# A command-line fuzzy finder
+brew 'fzf'
+
+# A smarter 'cd' command
+brew 'zoxide'
+
+# Clone of cat with syntax highlighting and Git integration
+brew 'bat'
+
+# Pager program similar to more
+brew 'less'
+
+# Simple, fast and user-friendly alternative to find
+brew 'fd'
+
+# An extremely fast alternative to grep that respects your gitignore
+brew 'ripgrep'
+
+# Disk Usage/Free Utility - a better 'df' alternative
+brew 'duf'
+
+# A more intuitive version of du in rust
+brew 'dust'
+
+# 7-Zip (high compression file archiver) implementation
+brew 'p7zip'
+
+# General-purpose data compression with high compression ratio
+brew 'xz'
+
+# A modern replacement for ps written in Rust
+brew 'procs'
+
+# An interactive process viewer for Unix
+brew 'htop'
+
+# Display an interface's bandwidth usage
+brew 'iftop'
+
+# Top-like interface for container metrics
+brew 'ctop'
+
+# Glances an Eye on your system
+brew 'glances'
+
+# Manage your dotfiles across multiple diverse machines, securely
+brew 'chezmoi'
+
+# Load/unload environment variables based on $PWD
+brew 'direnv'
+
+# Personal information dashboard for your Terminal
+brew 'wtfutil'
+
+# Simplified and community-driven man pages
+brew 'tldr'
+
+# Create and view interactive cheatsheets on the command-line
+brew 'cheat'
+
+# Record and share your terminal sessions, the simple way
+brew 'asciinema'
+
+# GitHub command-line tool
+brew 'gh'
+
+# Distributed revision control system
+brew 'git'
+
+# Manage your git repositories in one place
+brew 'gitbatch'
+
+# Audit git repos for secrets
+brew 'gitleaks'
+
+# Git extension for versioning large files
+brew 'git-lfs'
+
+# Small git utilities
+brew 'git-extras'
+
+# Text interface for Git repositories
+brew 'tig'
+
+# A simple terminal UI for git commands
+brew 'lazygit'
+
+# Prevents you from committing sensitive information to a git repo
+brew 'git-secrets'
+
+# Remove crazy big files, passwords, credentials and other private data
+brew 'bfg'
+
+# A framework for managing and maintaining multi-language pre-commit hooks
+brew 'pre-commit'
+
+# Syntax-highlighting pager for git and diff output
+brew 'git-delta'
+
+# User-friendly cURL replacement (command-line HTTP client)
+brew 'httpie'
+
+# Next generation open source RPC library and framework
+brew 'grpc'
+
+# Powerful HTTP and GraphQL tool belt
+cask 'insomnia'
+
+# HTTP client that helps testing and describing APIs
+cask 'rapidapi'
+
+##################################################################
+### devops
+##################################################################
+
+# Run your GitHub Actions locally
+brew 'act'
+
+# Static checker for GitHub Actions workflow files
+brew 'actionlint'
+
+##################################################################
+### fs
+##################################################################
+
+# Easily and securely send things from one computer to another
+brew 'croc'
+
+# Console program to recover files based on their headers and footers
+brew 'foremost'
+
+# Open any archive in seconds
+mas 'The Unarchiver', id: 425424353
+
+##################################################################
+### office
+##################################################################
+
+# Online diagram software
+cask 'drawio'
+
+# Take the complication out of document imaging with one button ease of use
+cask 'fujitsu-scansnap-home'
+
+# Open-source office software suite
+cask 'libreoffice'
+
+# Logseq is the open toolbox for workflows that deal with lots of information
+cask 'logseq'
+
+##################################################################
+### communication
+##################################################################
+
+# Video communication and virtual meeting platform
+cask 'zoom'
+
+# Matrix collaboration client
+cask 'element'
+
+##################################################################
+### productivity
+##################################################################
+
+# Control your tools with a few keystrokes
+cask 'raycast'
+
+# macOS system monitor in your menu bar
+cask 'stats'
+
+##################################################################
+### security
+##################################################################
+
+# GNU Transport Layer Security (TLS) Library
+brew 'gnutls'
+
+# SSL/TLS cryptography library
+brew 'openssl'
+
+# GNU Pretty Good Privacy (PGP) package
+brew 'gnupg'
+
+# Manage your GnuPG keys with ease!
+brew 'gpg-tui'
+
+# Editor of encrypted files
+brew 'sops'
+
+# Store and sync passwords and passkeys
+cask 'enpass'
+
+##################################################################
+### browser
+##################################################################
+
+# Web browser with built-in email client focusing on customization and control
+cask 'vivaldi'
+
+# Web browser focusing on privacy
+cask 'brave-browser'
+
+##################################################################
+### entertainment
+##################################################################
+
+# Unlimited streaming in high sound quality
+cask 'qobuz'
+
+# Bring all your music together and adds tons of data
+cask 'roon'

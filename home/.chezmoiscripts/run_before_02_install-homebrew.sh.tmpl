@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env") . -}}
+
+if ! binary_exists brew; then
+  info "homebrew is not installed." -icon "🍺"
+  info "Installing Homebrew, a MacOS package manager. Follow the instructions!" -icon "🍺"
+
+  requires_sudo
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+
+  info "validating installation of homebrew." -icon "🍺"
+  if ! binary_exists brew; then
+    error "homebrew is not installed." -icon "🍺"
+  fi
+fi
+
+info "verifying installation of mas." -icon "🧺"
+if ! binary_exists mas; then
+  info "mas is not installed." -icon "🧺"
+  info "Installing mas, Mac Apple Store CLI." -icon "🧺"
+  brew install mas
+
+  info "validating installation of mas." -icon "🧺"
+  if ! binary_exists mas; then
+    error "mas is not installed." -icon "🧺"
+  fi
+fi

@@ -1,0 +1,13 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "editor.inlineSuggest.enabled": true,
+  "files.autoSave": "onWindowChange",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "zsh",
+      "args": []
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "debug.onTaskErrors": "debugAnyway"
+}

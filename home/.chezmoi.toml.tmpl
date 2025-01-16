@@ -1,0 +1,27 @@
+{{- $interactive := stdinIsATTY -}}
+{{- $name := "Florian Schade" -}}
+{{- $email := "f.schade@icloud.com" -}}
+
+{{- if not $interactive -}}
+  {{- writeToStdout "💡 must be run interactively\n" -}}
+  {{- exit 1 -}}
+{{- end -}}
+
+{{- if not (stat (joinPath .chezmoi.homeDir ".ssh/id_rsa")) -}}
+  {{- writeToStdout "💡 run ssh-keygen first\n" -}}
+  {{- exit 1 -}}
+{{- end -}}
+
+{{- writeToStdout "💡 Tip: you can re-enter your data with `chezmoi init --data=false`.\n" -}}
+
+{{- $hostType := default "" (env "CZ_HOST_TYPE") -}}
+{{- if eq $hostType "" -}}
+    {{- $hostType = promptChoice "Please select your host-type" (list "personal_mac" "work_mac") -}}
+{{- end -}}
+
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+
+[data]
+  name = {{ $name | quote }}
+  email = {{ $email | quote }}
+  hostType = {{ $hostType | quote }}

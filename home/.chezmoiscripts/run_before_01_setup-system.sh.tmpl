@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+{{ includeTemplate (joinPath .chezmoi.workingTree "scripts/shell-env") . -}}
+
+
+declare license arch xcode_path
+arch="$(uname -m)"
+
+if [[ "${arch}" == arm64 ]] && ! [[ -f /Library/Apple/usr/share/rosetta/rosetta ]]; then
+  info "install rosetta on an apple silicon mac" -icon "🍺"
+  softwareupdate --install-rosetta --agree-to-license
+fi
+
+license="$(defaults read /Library/Preferences/com.apple.dt.Xcode | awk '/IDELastGMLicenseAgreedTo/ { print $3; }' | sed 's/;//')"
+if [[ -z "${license}" ]]; then
+  info "accept xcodebuild license" -icon "🍺"
+  requires_sudo
+  sudo xcodebuild -license
+fi
+
+xcode_path="$(xcode-select --print-path)"
+if [[ -z "${xcode_path}" ]]; then
+    info "xcode-select install" -icon "🍺"
+    xcode-select --install
+fi

@@ -1,0 +1,10 @@
+#!{{ lookPath "bash" }}
+
+# enable custom prefs loading
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# set the path to the custom prefs
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "{{ .chezmoi.workingTree }}/state/iterm2"
+
+# persist settings on change
+/usr/libexec/PlistBuddy -c "Delete ':NoSyncNeverRemindPrefsChangesLostForFile_selection'" -c "Add ':NoSyncNeverRemindPrefsChangesLostForFile_selection' integer '2'" "$HOME/Library/Preferences/com.googlecode.iterm2.plist"
