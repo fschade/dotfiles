@@ -23,3 +23,11 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
   name = "Florian Schade"
   email = "f.schade@icloud.com"
   hostType = {{ $hostType | quote }}
+
+[data.displaySwitch]
+  # Genesys Logic, Inc. USB2.1 Hub (UGREEN Switch)
+  usbDevice = "05e3:0610"
+  # 0xf - DELL U4025QW, DP
+  # 0x10 - DELL U4025QW, TB
+  onUsbConnect = {{ get (dict "personal_mac" "0xf" "work_mac" "0x10") .hostType | quote }}
+  onUsbDisconnect = {{ get (dict "personal_mac" "0x10" "work_mac" "0xf") .hostType | quote }}
