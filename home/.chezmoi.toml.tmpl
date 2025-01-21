@@ -1,6 +1,4 @@
 {{- $interactive := stdinIsATTY -}}
-{{- $name := "Florian Schade" -}}
-{{- $email := "f.schade@icloud.com" -}}
 
 {{- if not $interactive -}}
   {{- writeToStdout "💡 must be run interactively\n" -}}
@@ -22,6 +20,6 @@
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 [data]
-  name = {{ $name | quote }}
-  email = {{ $email | quote }}
+  name = "Florian Schade"
+  email = "f.schade@icloud.com"
   hostType = {{ $hostType | quote }}
